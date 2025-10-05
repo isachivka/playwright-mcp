@@ -13,6 +13,8 @@ services:
       - chromium
       - --no-sandbox
       - --isolated
+      - --allowed-hosts
+      - "*"
       - --port
       - "8931"
     ports:                                            # -p 8931:8931
