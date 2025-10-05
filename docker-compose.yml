@@ -12,6 +12,7 @@ services:
       - --browser
       - chromium
       - --no-sandbox
+      - --isolated
       - --port
       - "8931"
     ports:                                            # -p 8931:8931
