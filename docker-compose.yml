@@ -1,0 +1,20 @@
+services:
+  playwright:
+    image: mcr.microsoft.com/playwright/mcp:latest   # --pull=always ниже
+    pull_policy: always                               # всегда тянуть свежий образ
+    container_name: playwright                        # --name playwright
+    init: true                                        # --init
+    stdin_open: true                                  # -i
+    entrypoint: node                                  # --entrypoint node
+    command:                                          # cli.js --headless --browser chromium --no-sandbox --port 8931
+      - cli.js
+      - --headless
+      - --browser
+      - chromium
+      - --no-sandbox
+      - --port
+      - "8931"
+    ports:                                            # -p 8931:8931
+      - "8931:8931"
+    restart: "no"                                     # в compose нет --rm; контейнер не удаляется автоматически
+
