@@ -19,7 +19,9 @@ services:
       - "8931"
     ports:                                            # -p 8931:8931
       - "8931:8931"
-    volumes:                                          # монтирование директорий
-      - ./tmp:/tmp/
+    volumes:                                          # монтируем папку загрузок
+      - ./downloads:/downloads
+    environment:                                      # переменные окружения
+      - PLAYWRIGHT_DOWNLOADS_DIR=/downloads
     restart: "no"                                     # в compose нет --rm; контейнер не удаляется автоматически
 
