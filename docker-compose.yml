@@ -20,6 +20,6 @@ services:
     ports:                                            # -p 8931:8931
       - "8931:8931"
     volumes:                                          # монтирование директорий
-      - ./files:/tmp/playwright-output
+      - ./tmp:/tmp/
     restart: "no"                                     # в compose нет --rm; контейнер не удаляется автоматически
 
