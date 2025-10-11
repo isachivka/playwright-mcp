@@ -17,11 +17,11 @@ services:
       - "*"
       - --port
       - "8931"
+      - --downloadsPath
+      - /app/downloads
     ports:                                            # -p 8931:8931
       - "8931:8931"
     volumes:                                          # монтируем папку загрузок
-      - ./downloads:/downloads
-    environment:                                      # переменные окружения
-      - PLAYWRIGHT_DOWNLOADS_DIR=/downloads
+      - ./downloads:/app/downloads
     restart: "no"                                     # в compose нет --rm; контейнер не удаляется автоматически
 
