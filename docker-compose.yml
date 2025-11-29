@@ -12,7 +12,6 @@ services:
       - --browser
       - chromium
       - --no-sandbox
-      - --isolated
       - --allowed-hosts
       - "*"
       - --port
