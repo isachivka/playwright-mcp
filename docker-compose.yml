@@ -21,5 +21,4 @@ services:
       - "8931:8931"
     volumes:                                          # монтируем папку загрузок
       - ./downloads:/tmp/playwright-output
-    restart: "always"                                     # в compose нет --rm; контейнер не удаляется автоматически
-
+    restart: unless-stopped
