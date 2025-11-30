@@ -1,12 +1,12 @@
 services:
-  playwright:
-    image: mcr.microsoft.com/playwright/mcp:latest   # --pull=always ниже
-    pull_policy: always                               # всегда тянуть свежий образ
-    container_name: playwright                        # --name playwright
-    init: true                                        # --init
-    stdin_open: true                                  # -i
-    entrypoint: node                                  # --entrypoint node
-    command:                                          # cli.js --headless --browser chromium --no-sandbox --port 8931
+  playwright1:
+    image: mcr.microsoft.com/playwright/mcp:latest
+    pull_policy: always
+    container_name: playwright
+    init: true
+    stdin_open: true
+    entrypoint: node
+    command:
       - cli.js
       - --headless
       - --browser
@@ -17,8 +17,100 @@ services:
       - "*"
       - --port
       - "8931"
-    ports:                                            # -p 8931:8931
+    ports:
       - "8931:8931"
-    volumes:                                          # монтируем папку загрузок
+    volumes:
+      - ./downloads:/tmp/playwright-output
+    restart: unless-stopped
+  playwright2:
+    image: mcr.microsoft.com/playwright/mcp:latest
+    pull_policy: always
+    container_name: playwright
+    init: true
+    stdin_open: true
+    entrypoint: node
+    command:
+      - cli.js
+      - --headless
+      - --browser
+      - chromium
+      - --no-sandbox
+      - --isolated
+      - --allowed-hosts
+      - "*"
+      - --port
+      - "8931"
+    ports:
+      - "8932:8931"
+    volumes:
+      - ./downloads:/tmp/playwright-output
+    restart: unless-stopped
+  playwright3:
+    image: mcr.microsoft.com/playwright/mcp:latest
+    pull_policy: always
+    container_name: playwright
+    init: true
+    stdin_open: true
+    entrypoint: node
+    command:
+      - cli.js
+      - --headless
+      - --browser
+      - chromium
+      - --no-sandbox
+      - --isolated
+      - --allowed-hosts
+      - "*"
+      - --port
+      - "8931"
+    ports:
+      - "8933:8931"
+    volumes:
+      - ./downloads:/tmp/playwright-output
+    restart: unless-stopped
+  playwright4:
+    image: mcr.microsoft.com/playwright/mcp:latest
+    pull_policy: always
+    container_name: playwright
+    init: true
+    stdin_open: true
+    entrypoint: node
+    command:
+      - cli.js
+      - --headless
+      - --browser
+      - chromium
+      - --no-sandbox
+      - --isolated
+      - --allowed-hosts
+      - "*"
+      - --port
+      - "8931"
+    ports:
+      - "8934:8931"
+    volumes:
+      - ./downloads:/tmp/playwright-output
+    restart: unless-stopped
+  playwright5:
+    image: mcr.microsoft.com/playwright/mcp:latest
+    pull_policy: always
+    container_name: playwright
+    init: true
+    stdin_open: true
+    entrypoint: node
+    command:
+      - cli.js
+      - --headless
+      - --browser
+      - chromium
+      - --no-sandbox
+      - --isolated
+      - --allowed-hosts
+      - "*"
+      - --port
+      - "8931"
+    ports:
+      - "8935:8931"
+    volumes:
       - ./downloads:/tmp/playwright-output
     restart: unless-stopped
