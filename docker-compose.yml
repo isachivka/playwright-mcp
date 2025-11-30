@@ -2,7 +2,7 @@ services:
   playwright1:
     image: mcr.microsoft.com/playwright/mcp:latest
     pull_policy: always
-    container_name: playwright
+    container_name: playwright1
     init: true
     stdin_open: true
     entrypoint: node
@@ -25,7 +25,7 @@ services:
   playwright2:
     image: mcr.microsoft.com/playwright/mcp:latest
     pull_policy: always
-    container_name: playwright
+    container_name: playwright2
     init: true
     stdin_open: true
     entrypoint: node
@@ -48,7 +48,7 @@ services:
   playwright3:
     image: mcr.microsoft.com/playwright/mcp:latest
     pull_policy: always
-    container_name: playwright
+    container_name: playwright3
     init: true
     stdin_open: true
     entrypoint: node
@@ -71,7 +71,7 @@ services:
   playwright4:
     image: mcr.microsoft.com/playwright/mcp:latest
     pull_policy: always
-    container_name: playwright
+    container_name: playwright4
     init: true
     stdin_open: true
     entrypoint: node
@@ -94,7 +94,7 @@ services:
   playwright5:
     image: mcr.microsoft.com/playwright/mcp:latest
     pull_policy: always
-    container_name: playwright
+    container_name: playwright5
     init: true
     stdin_open: true
     entrypoint: node
